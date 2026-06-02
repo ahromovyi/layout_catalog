@@ -35,11 +35,11 @@ body {
   height: 40px;
   width: 40px;
   flex-shrink: 0;
-}
 
-.logo__image {
-  height: 100%;
-  width: 100%;
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 // ─── Header ───────────────────────────────────────────────────────────────
@@ -53,48 +53,50 @@ body {
 }
 
 // ─── Nav ──────────────────────────────────────────────────────────────────
-.nav__list {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.nav__item {
-  margin-left: 20px;
-
-  &:first-child {
-    margin-left: 0;
-  }
-}
-
-.nav__link {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 60px;
-  white-space: nowrap;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: $color-nav-text;
-  transition: color $transition;
-
-  &:hover {
-    color: $color-nav-hover;
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
-  &.is-active {
-    color: $color-nav-hover;
+  &__item {
+    margin-left: 20px;
 
-    &::after {
-      content: '';
-      position: absolute;
-      background-color: $color-nav-hover;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      border-radius: 2px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-nav-text;
+    transition: color $transition;
+
+    &:hover {
+      color: $color-nav-hover;
+    }
+
+    &.is-active {
+      color: $color-nav-hover;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: $color-nav-hover;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 2px;
+      }
     }
   }
 }
@@ -136,120 +138,122 @@ body {
     transform: scale(1.2);
     z-index: 10;
   }
-}
 
-.card__image {
-  display: block;
-  margin: 0 auto 40px;
-  width: 160px;
-  height: 134px;
-}
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
 
-.card__title {
-  margin: 0 0 4px;
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 500;
-  color: $color-text-accent;
-  transition: color $transition;
-}
+  &__title {
+    margin: 0 0 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color-text-accent;
+    transition: color $transition;
 
-.card:hover .card__title {
-  color: $color-title-hover;
-}
+    .card:hover & {
+      color: $color-title-hover;
+    }
+  }
 
-.card__code {
-  margin-top: 4px;
-  margin-bottom: 14px;
-  color: $color-text-secondary;
-  font-size: 10px;
-}
+  &__code {
+    margin-top: 4px;
+    margin-bottom: 14px;
+    color: $color-text-secondary;
+    font-size: 10px;
+  }
 
-.card__review-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 24px;
-}
+  &__review-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
 
-.card__review-count {
-  color: $color-text-accent;
-  margin-bottom: 0;
-  font-size: 10px;
-}
+  &__review-count {
+    color: $color-text-accent;
+    margin-bottom: 0;
+    font-size: 10px;
+  }
 
-.card__price-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 16px;
-}
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 16px;
+  }
 
-.card__price-label {
-  font-size: 12px;
-  line-height: 18px;
-  color: $color-text-secondary;
-  font-weight: 400;
-  
-  // 22
-}
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-text-secondary;
+    font-weight: 400;
+  }
 
-.card__price {
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: bold;
-  color: $color-text-accent;
-}
+  &__price {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    color: $color-text-accent;
+  }
 
-.card__buy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  height: 40px;
-  border: 1px solid $color-main;
-  border-radius: 5px;
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: $color-bg;
-  background-color: $color-main;
-  transition:
-    color $transition,
-    background-color $transition;
-}
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid $color-main;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-bg;
+    background-color: $color-main;
+    transition:
+      color $transition,
+      background-color $transition;
 
-.card__buy:hover,
-.card:hover .card__buy {
-  color: $color-main;
-  background-color: $color-bg;
+    &:hover {
+      color: $color-main;
+      background-color: $color-bg;
+    }
+
+    .card:hover & {
+      color: $color-main;
+      background-color: $color-bg;
+    }
+  }
 }
 
 // ─── Stars ────────────────────────────────────────────────────────────────
 .stars {
   display: flex;
-}
 
-.stars__star {
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-  background-image: url(../images/star.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 
-  &:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-}
 
-.stars--1 .stars__star:nth-child(-n + 1),
-.stars--2 .stars__star:nth-child(-n + 2),
-.stars--3 .stars__star:nth-child(-n + 3),
-.stars--4 .stars__star:nth-child(-n + 4),
-.stars--5 .stars__star:nth-child(-n + 5) {
-  background-image: url(../images/star-active.svg);
+  &--1 &__star:nth-child(-n + 1),
+  &--2 &__star:nth-child(-n + 2),
+  &--3 &__star:nth-child(-n + 3),
+  &--4 &__star:nth-child(-n + 4),
+  &--5 &__star:nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
+  }
 }
